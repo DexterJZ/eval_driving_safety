@@ -14,8 +14,8 @@ transform = transforms.Compose(
         [
             transforms.Resize((224, 224)),
             transforms.ToTensor(),
-            transforms.Normalize((0.3084, 0.3172, 0.3237),
-                                 (0.2324, 0.2305, 0.2334)),
+            transforms.Normalize((0.3091, 0.3181, 0.3248),
+                                 (0.2328, 0.2308, 0.2337)),
         ]
     )
 
