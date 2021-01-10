@@ -24,15 +24,12 @@ from PIL import Image
 from tqdm import tqdm
 import scipy.misc as ssc
 
-sys.path.append('/public/yanglou3/DSGN/')
 from dsgn.models import *
 from dsgn.utils.numpy_utils import *
 from dsgn.utils.numba_utils import *
 from dsgn.utils.torch_utils import *
 from dsgn.models.loss3d import RPN3DLoss
 from dsgn.models.inference3d import make_fcos3d_postprocessor
-
-sys.path.append('/public/yanglou3/DSGN/tools/')
 from env_utils import *
 
 parser = argparse.ArgumentParser(description="PGD attack")
@@ -275,7 +272,7 @@ def main():
         orig_img_path = '{0}/image_2/{1}.png'.format(args.data_path, img_name)
         w, h = Image.open(orig_img_path).convert('RGB').size
 
-        # save clean image(unattacked or iteration 0)
+        # save clean image(unattacked or iteration=0)
         save_dir = 'dsgn_pgd_iters_0'
         save_dir_l = save_dir + '/image_2'
         save_dir_r = save_dir + '/image_3'

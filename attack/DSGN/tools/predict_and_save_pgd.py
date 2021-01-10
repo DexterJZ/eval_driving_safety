@@ -22,7 +22,6 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import scipy.misc as ssc
 
-sys.path.append('/public/yanglou3/DSGN/')
 from dsgn.models import *
 from dsgn.utils.numpy_utils import *
 from dsgn.utils.numba_utils import *
@@ -30,8 +29,6 @@ from dsgn.utils.torch_utils import *
 from dsgn.models.inference3d import make_fcos3d_postprocessor
 from dsgn.dataloader import KITTILoader3D as ls
 from dsgn.dataloader import KITTILoader_dataset3d as DA
-
-sys.path.append('/public/yanglou3/DSGN/tools/')
 from env_utils import *
 
 parser = argparse.ArgumentParser(description='Perturbation attack predict and save')

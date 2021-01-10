@@ -25,14 +25,11 @@ import matplotlib.pyplot as plt
 from tqdm import tqdm
 import scipy.misc as ssc
 
-sys.path.append('/public/yanglou3/DSGN/')
 from dsgn.models import *
 from dsgn.utils.numpy_utils import *
 from dsgn.utils.numba_utils import *
 from dsgn.utils.torch_utils import *
 from dsgn.models.inference3d import make_fcos3d_postprocessor
-
-sys.path.append('/public/yanglou3/DSGN/tools/')
 from env_utils import *
 
 parser = argparse.ArgumentParser(description='Patch attack predict and save')
@@ -189,7 +186,7 @@ def test(imgL, imgR, image_sizes=None, calibs_fu=None, calibs_baseline=None, cal
         outputs = model(imgL, imgR, calibs_fu, calibs_baseline,
                         calibs_Proj, calibs_Proj_R=calibs_Proj_R)
 
-        if args.feat:
+        if args.save_feat_map:
             # test feature hook
             print("*" * 5 + "hook record extractor features" + "*" * 5)
             print(module_name_extractors)

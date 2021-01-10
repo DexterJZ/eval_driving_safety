@@ -24,15 +24,12 @@ from PIL import Image
 from tqdm import tqdm
 import scipy.misc as ssc
 
-sys.path.append('/public/yanglou3/DSGN/')
 from dsgn.models import *
 from dsgn.utils.numpy_utils import *
 from dsgn.utils.numba_utils import *
 from dsgn.utils.torch_utils import *
 from dsgn.models.loss3d import RPN3DLoss
 from dsgn.models.inference3d import make_fcos3d_postprocessor
-
-sys.path.append('/public/yanglou3/DSGN/tools/')
 from env_utils import *
 
 parser = argparse.ArgumentParser(description="Patch attack")
