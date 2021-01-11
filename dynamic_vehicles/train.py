@@ -22,7 +22,7 @@ transform = transforms.Compose(
 num_epochs = 20
 lr = 0.000001
 train_CNN = False
-batch_size = 32
+batch_size = 16
 shuffle = True
 pin_memory = True
 num_workers = 1
@@ -80,9 +80,7 @@ def check_accuracy(loader, model):
 
     # return accuracy
 
-    print(
-            f"Got {num_correct} / {num_samples} with accuracy {accuracy}"
-        )
+    print(f"Got {num_correct} / {num_samples} with accuracy {accuracy}")
 
     model.train()
 
@@ -107,12 +105,16 @@ def train():
         if epoch % 2 == 0:
             loop.set_postfix(val_acc=check_accuracy(validation_loader, model))
 
-        if epoch >= 2 and optimizer.param_groups[0]['lr'] == 0.000001:
+        if epoch >= 6 and optimizer.param_groups[0]['lr'] == 0.000001:
             optimizer.param_groups[0]['lr'] *= 0.5
+            print('Updated learning rate: {}'.format(
+                optimizer.param_groups[0]['lr']))
 
-        if epoch >= 4 and \
-                optimizer.param_groups[0]['lr'] == 0.00000005:
+        if epoch >= 10 and \
+                optimizer.param_groups[0]['lr'] == 0.0000005:
             optimizer.param_groups[0]['lr'] *= 0.5
+            print('Updated learning rate: {}'.format(
+                optimizer.param_groups[0]['lr']))
 
         save_name = os.path.join('model/', 'cnn_{}.pth'.format(epoch))
 
