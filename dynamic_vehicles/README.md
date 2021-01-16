@@ -28,12 +28,12 @@ Make sure your directory structure looks like:
       |  |--validation_image_2
       |--model
       |  |--pretrained_model
-      |--create_training_csv.py
-      |--create_validation_csv.py
+      |--Dataset.py
+      |--Model.py
       |-- ...
 ```
 
-In terms of training and validating the dynamic vehicle classifier, we choose the first 1200 scenarios of the dataset provided by the KITTI 3D Object Detection Benchmark and filter out the scenarios where no car appears. We manually annotate each vehicle in every scenaio to indicate whether or not it is moving based on the previous and the subsequent frames and crop it out. The naming format of each vehicle image in the dataset is "aaaaaa_bc.png", where "aaaaaa" is the scenario index, "b" is the vehicle index in that scenario, and "c" is the label suggesting its dynamic status ("s" stands for static and "d" for dynamic).
+In terms of training and validating the dynamic vehicle classifier, we choose the first 1200 scenarios of the dataset provided by [KITTI 3D Object Detection Benchmark](http://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d) and filter out the scenarios where no car appears. We manually annotate each vehicle in every scenaio to indicate whether or not it is moving based on the previous and the subsequent frames and crop it out. The naming format of each vehicle image in the dataset is "aaaaaa_bc.png", where "aaaaaa" is the scenario index, "b" is the vehicle index in that scenario, and "c" is the label suggesting its dynamic status ("s" stands for static and "d" for dynamic).
 
 The training dataset contains 4605 scenaios, while the validation dataset set has 533 scenaios. You can download them from [Google Drive](https://).
 
