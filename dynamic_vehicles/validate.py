@@ -33,7 +33,8 @@ validation_loader = DataLoader(dataset=validation_set, shuffle=shuffle,
                                pin_memory=pin_memory)
 
 model = CNN().to(device)
-model.load_state_dict(torch.load("model/cnn_20.pth")['model_state_dict'])
+model.load_state_dict(
+    torch.load("model/pretrained_model/cnn_20.pth")['model_state_dict'])
 
 def validate():
     num_correct = 0
