@@ -1,4 +1,12 @@
 *__pycache__*
+.idea/
 dynamic_vehicles/data/
 dynamic_vehicles/model/
 dynamic_vehicles/.vscode/
+driving_constraint/utils/
+driving_constraint/.ipynb_checkpoints/
+driving_constraint/model/
+driving_constraint/data/dynamic/
+driving_constraint/data/image_2/
+driving_constraint/data/road_dynamic/
+driving_constraint/data/static/
