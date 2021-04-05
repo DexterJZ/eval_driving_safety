@@ -19,9 +19,14 @@ num_epochs = 20
 lr = 0.001
 batch_size = 8
 
+save_path = 'model/'
+if not os.path.isdir(save_path):
+    os.makedirs(save_path)
+
 # Device configuration
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
+# load data
 transform = transforms.Compose(
     [
         transforms.Resize((224, 224)),
@@ -33,10 +38,10 @@ transform = transforms.Compose(
 )
 
 training_set = DrivingConstraintDataset('data/image_2/',
-                                        'training_csv.csv',
+                                        'data/training_csv.csv',
                                         transform)
 validation_set = DrivingConstraintDataset('data/image_2/',
-                                          'validation_csv.csv',
+                                          'data/validation_csv.csv',
                                           transform)
 
 training_loader = DataLoader(dataset=training_set, shuffle=shuffle,
@@ -46,6 +51,7 @@ validation_loader = DataLoader(dataset=validation_set, shuffle=shuffle,
                                batch_size=batch_size, num_workers=num_workers,
                                pin_memory=pin_memory)
 
+# initialize model
 model = CNN().to(device)
 
 for name, param in model.resnet50.named_parameters():
@@ -104,10 +110,12 @@ def train():
             optimizer.step()
 
         if epoch % 2 == 0:
+            # print validation result
             loop.set_postfix(val_acc=check_accuracy(validation_loader, model))
 
         if epoch % 5 == 0:
-            save_name = os.path.join('model/', 'cnn_{}.pth'.format(epoch))
+            # save checkpoint
+            save_name = os.path.join(save_path, 'cnn_{}.pth'.format(epoch))
 
             torch.save({
                 'epoch': epoch,

@@ -29,7 +29,7 @@ pin_memory = True
 num_workers = 1
 
 validation_set = DrivingConstraintDataset('data/image_2/',
-                                          'validation_csv.csv',
+                                          'data/validation_csv.csv',
                                           transform)
 
 validation_loader = DataLoader(dataset=validation_set, shuffle=shuffle,
@@ -59,7 +59,7 @@ def validate():
 
     accuracy = f"{float(num_correct) / float(num_samples) * 100:.2f}"
 
-    print(f"Got {num_correct} / {num_samples} with accuracy {accuracy}")
+    print(f"Got {num_correct} / {num_samples} with accuracy {accuracy}%")
 
 
 if __name__ == "__main__":
