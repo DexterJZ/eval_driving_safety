@@ -122,7 +122,7 @@ if __name__ == '__main__':
         clean_im_left_data = im_left_data.data
         clean_im_right_data = im_right_data.data
 
-        # save clean images(unattacked or iteration=0)
+        # save clean images(without attack)
         save_dir = 'stereo_rcnn_pgd_iters_0'
         save_dir_l = save_dir + '/image_2'
         save_dir_r = save_dir + '/image_3'
@@ -217,7 +217,7 @@ if __name__ == '__main__':
                                         0).unsqueeze(0).detach()
 
             # save attacked images
-            save_dir = '/stereo_rcnn_pgd_iters_{0}'.format(iteration+1)
+            save_dir = 'stereo_rcnn_pgd_iters_{0}'.format(iteration+1)
             save_dir_l = save_dir + '/image_2'
             save_dir_r = save_dir + '/image_3'
 
@@ -234,10 +234,10 @@ if __name__ == '__main__':
             img_left = img_left.squeeze(0).permute(1, 2, 0) \
                 .contiguous().data.numpy()
             img_left += cfg.PIXEL_MEANS
-            cv2.imwrite('{0}{1}'.format(save_dir_l, img_name), img_left)
+            cv2.imwrite('{0}/{1}'.format(save_dir_l, img_name), img_left)
 
             img_right = im_right_data.clone().detach_().cpu()
             img_right = img_right.squeeze(0).permute(1, 2, 0) \
                 .contiguous().data.numpy()
             img_right += cfg.PIXEL_MEANS
-            cv2.imwrite('{0}{1}'.format(save_dir_r, img_name), img_right)
+            cv2.imwrite('{0}/{1}'.format(save_dir_r, img_name), img_right)

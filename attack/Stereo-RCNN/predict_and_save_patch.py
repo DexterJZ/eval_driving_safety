@@ -361,6 +361,22 @@ if __name__ == '__main__':
                     np.save('{}/feat_out{}'.format(feat_out_dir, str(j)),
                             features_out_hook[j][0].cpu().numpy())
 
+            im2show_left = np.copy(cv2.imread(roidb[i]['img_left']))
+            im2show_right = np.copy(cv2.imread(roidb[i]['img_right']))
+
+            # scale adversarial example size
+            im_shape = im2show_left.shape
+            # print("left shape: ", im_shape)
+            im_size_min = np.min(im_shape[0:2])
+            im_scale = float(375) / float(im_size_min)
+            im2show_left = cv2.resize(im2show_left, None, None, fx=im_scale,
+                                      fy=im_scale,
+                                      interpolation=cv2.INTER_LINEAR)
+
+            im2show_right = cv2.resize(im2show_right, None, None, fx=im_scale,
+                                       fy=im_scale,
+                                       interpolation=cv2.INTER_LINEAR)
+
             pointcloud = kitti_utils.get_point_cloud(lidar_path, calib)
             im_box = vis_utils.vis_lidar_in_bev(pointcloud,
                                                 width=im2show_left.shape[0]*2)
@@ -515,7 +531,7 @@ if __name__ == '__main__':
                 im2show = np.concatenate((im2show_left, im2show_right), axis=0)
                 im2show = np.concatenate((im2show, im_box), axis=1)
 
-                plot_dir = os.path.join(result_dir, '/refer')
+                plot_dir = os.path.join(result_dir, 'refer')
                 if not os.path.isdir(plot_dir):
                     os.makedirs(plot_dir)
 

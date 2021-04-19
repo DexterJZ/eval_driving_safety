@@ -149,6 +149,7 @@ else:
 print('Number of model parameters: {}'.format(
     sum([p.data.nelement() for p in model.parameters()])))
 
+# mean and standard deviation of the dataset
 mean = [0.485, 0.456, 0.406]
 std = [0.229, 0.224, 0.225]
 
@@ -250,6 +251,8 @@ def main():
         imgR = Variable(torch.FloatTensor(imgR))
         disp_L = Variable(torch.FloatTensor(disp_L))
         imgL, imgR, disp_true = imgL.cuda(), imgR.cuda(), disp_L.cuda()
+        ori_imgL_data = denormalize(imgL.clone().detach_().data)
+        ori_imgR_data = denormalize(imgR.clone().detach_().data)
 
         if targets is not None:
             for i in range(len(targets)):
@@ -267,12 +270,12 @@ def main():
         mask.detach_()
         # ---------
 
-        # find original image shape
+        # find image shape without pre-processing
         img_name = "%06d" % image_indexes[0]
         orig_img_path = '{0}/image_2/{1}.png'.format(args.data_path, img_name)
         w, h = Image.open(orig_img_path).convert('RGB').size
 
-        # save clean image(unattacked or iteration=0)
+        # save clean image(without attacked)
         save_dir = 'dsgn_pgd_iters_0'
         save_dir_l = save_dir + '/image_2'
         save_dir_r = save_dir + '/image_3'

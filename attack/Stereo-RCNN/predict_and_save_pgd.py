@@ -420,7 +420,7 @@ if __name__ == '__main__':
                 im2show = np.concatenate((im2show_left, im2show_right), axis=0)
                 im2show = np.concatenate((im2show, im_box), axis=1)
 
-                plot_dir = os.path.join(result_dir, '/refer')
+                plot_dir = os.path.join(result_dir, 'refer')
                 if not os.path.isdir(plot_dir):
                     os.makedirs(plot_dir)
 

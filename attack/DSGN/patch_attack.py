@@ -51,7 +51,7 @@ parser.add_argument('--debugnum', default=None, type=int,
                     help='debug mode')
 
 parser.add_argument('--iter', type=int, default=2, help='iteration number of pgd attack')
-parser.add_argument('--eps', type=float, default=8 / 255)
+parser.add_argument('--eps', type=float, default=8/255)
 parser.add_argument('--epochs', dest='epochs', type=int, default=80)
 parser.add_argument('--ratio', dest='ratio', type=float, default=0.2)
 args = parser.parse_args()
@@ -256,7 +256,7 @@ def generate_round_mask(radius):
     return center_l, center_r, mask_l, mask_r
 
 
-def test(imL, imgR, image_sizes=None, calibs_fu=None, calibs_baseline=None, calibs_Proj=None, calibs_Proj_R=None):
+def test(imgL, imgR, image_sizes=None, calibs_fu=None, calibs_baseline=None, calibs_Proj=None, calibs_Proj_R=None):
     model.eval()
     with torch.no_grad():
         outputs = model(imgL, imgR, calibs_fu, calibs_baseline,
