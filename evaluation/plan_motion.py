@@ -24,10 +24,10 @@ def parse_args():
                         default="", type=str)
     parser.add_argument('--motion_primitive_folder', dest='motion_primitive_folder',
                         help='folder to store motion primitives',
-                        default="", type=str)
+                        default="../../tools/motion_primitive_generator/motion_primitives/", type=str)
     parser.add_argument('--dyna_obj_folder', dest='dyna_obj_folder',
                         help='folder to store the result of moving object classifier',
-                        default="", type=str)
+                        default="../../../kitti_labeled/road_dynamic_label", type=str)
 
     args = parser.parse_args()
     return args
