@@ -54,6 +54,10 @@ After setting up the model, please add our code to `tools` folder. The overall d
     |-- predict_and_save_pgd.py             (evaluate the model under pgd attack)
 ```
 
+### Pertrained Model
+
+Download the pertained model for [DSGN(car)](https://drive.google.com/open?id=1pbvyRGOknlovmIK96MwEyvV0_z76Bfks). The performance of the model can be checked in [DSGN github repo](https://github.com/Jia-Research-Lab/DSGN#performance-and-model-zoo).
+
 ### Perturbation attack
 
 **Launch the perturbation attack**:

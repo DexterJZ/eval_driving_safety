@@ -47,17 +47,25 @@ After adding our code, the overall directory will look like below:
 
 ### Evaluation
 
+To evaluate driving safety under adversarial attacks, please follow steps below.
+
+#### 0. Preparation
+
+Before you start the evaluation, please refer [driving_constraint/README.md](../driving_constraint/README.md) and [dynamic_vehicles](../dynamic_vehicles/README.md) to generate the dynamic information of driving scenarios.
 #### 1. convert scenarios
 ```
 python convert_scenarios.py --input_folder [path to your detection result folder] --output_folder [path to your scenario folder] --init_scenario_folder [path to your initial scenario]
 ```
 
-#### 2. convert ground truth scenarios (combine with planned trajectory to evaluate)
+#### 2. convert ground truth scenarios 
+
+Ground truth scenarios are combine with planned trajectory to evaluate
+
 ```
 python convert_gt_scenarios.py --input_folder [path to ground truth detection result folder] --output_folder [path to your ground truth scenario folder] --init_scenario_folder [path to your initial scenario]
 ```
 
-#### 3. plot scenarios
+#### 3. plot scenarios (optional)
 ```
 python plot_scenario.py --input_folder [path to the scenario file] 
 ```
@@ -67,7 +75,7 @@ python plot_scenario.py --input_folder [path to the scenario file]
 python plan_motion.py --input_folder [path to your scenario folder] --output_folder [path to your solution(trajectory) folder]
 ```
 
-#### 5. plot solution(trajectory)
+#### 5. plot solution(optional)
 ```
 python plot_solution.py --scenario_path [path to your scenarios folder]
 ```
