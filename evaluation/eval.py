@@ -3,7 +3,7 @@ import argparse
 import ast
 import math
 
-# from commonroad.common.solution import *
+from commonroad.common.solution import *
 
 
 def parse_args():
