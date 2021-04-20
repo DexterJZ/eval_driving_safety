@@ -2,7 +2,9 @@
 
 ![framework diagram](eval_framework.png)
 
-This is an implementation of my final year project.
+This is an implementation of the paper:
+
+*Evaluating Adversarial Attacks on Driving Safety in Vision-Based Autonomous Vehicles*
 
 ### Overview
 Although driving safety is the ultimate concern for autonomous driving, there is no comprehensive study on the linkage between the performance of deep learning models and the driving safety of autonomous vehicles under adversarial attacks. 
