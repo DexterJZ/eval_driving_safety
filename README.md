@@ -15,7 +15,7 @@ To evaluate driving safety, we propose an end-to-end evaluation framework with a
 ### Adversarial attacks
 
 - **DSGN**: please follow [attack/DSGN/README.md](attack/DSGN/README.md) to perform adversarial attacks.
-- **Stereo R-CNN**: please follow [attack/Stereo-RCNN/README.md](attack/Stereo-RCNN/README.md)
+- **Stereo R-CNN**: please refer [attack/Stereo-RCNN/README.md](attack/Stereo-RCNN/README.md) to launch adversarial attacks.
 
 ### End-to-end driving safety evaluation framework
 - Please follow [evaluation/README.md](./evaluation/README.md) to launch the driving safety evaluation framework.
