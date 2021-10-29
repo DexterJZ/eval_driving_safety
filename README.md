@@ -18,7 +18,25 @@ In this project, we investigate the impact of two primary types of adversarial a
 ### End-to-end driving safety evaluation framework
 - Please follow [evaluation/README.md](./evaluation/README.md) to launch the driving safety evaluation framework.
 
+### TODO List
+
+- [ ] adapt evaluation framework to the latest version of CommonRoad-Search (coming soon)
+
+### Citations
+
+If you find our work useful in your research, please consider citing:
+
+```
+@article{zhang2021evaluating,
+  title={Evaluating Adversarial Attacks on Driving Safety in Vision-Based Autonomous Vehicles},
+  author={Zhang, Jindi and Lou, Yang and Wang, Jianping and Wu, Kui and Lu, Kejie and Jia, Xiaohua},
+  journal={arXiv preprint arXiv:2108.02940},
+  year={2021}
+}
+```
+
 ### Acknowledgements
+
 - We thank several repos for their contributions which are used in this repo
     - DSGN implementation is taken from [Jia-Research-Lab](https://github.com/Jia-Research-Lab/DSGN).
     - Stereo R-CNN implementation is taken from [HKUST-Aerial-Robotics Stereo-RCNN](https://github.com/HKUST-Aerial-Robotics/Stereo-RCNN).
