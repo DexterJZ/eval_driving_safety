@@ -4,7 +4,7 @@
 
 This is an implementation of the paper:
 
-*Evaluating Adversarial Attacks on Driving Safety in Vision-Based Autonomous Vehicles*
+*Evaluating Adversarial Attacks on Driving Safety in Vision-Based Autonomous Vehicles* ([IEEE Xplore](https://ieeexplore.ieee.org/document/9493770)/[arXiv](https://arxiv.org/abs/2108.02940#))
 
 ### Overview
 Although driving safety is the ultimate concern for autonomous driving, there is no comprehensive study on the linkage between the performance of deep learning models and the driving safety of autonomous vehicles under adversarial attacks. 
