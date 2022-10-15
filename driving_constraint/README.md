@@ -42,7 +42,7 @@ cd data
 ln -s path_to_your_kitti_dataset/training/image_2
 ```
 
-Our pretrained model is available in [Google Drive](https://drive.google.com/file/d/1eTBIxr95jau9Lwy3l2ebg23zhW-ZrCqC/view?usp=sharing). If you want to try it out, put it into `eval_driving_safety/driving_constraint/model/`.
+Our pretrained model is available in [Google Drive](https://drive.google.com/file/d/1O8DmkrxxaQBQopWAXZcLOntCyf19vvTg/view?usp=sharing). If you want to try it out, put it into `eval_driving_safety/driving_constraint/model/`.
 
 ### Training
 For training please run:
